@@ -7,6 +7,23 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Mobile mobile = new Mobile("GTS105", "black", "Nokia");
+
+        IPhone iphoneMobile = new IPhone("IPhone 8", "black", "Apple");
+
+        AndroidMobile androidMobile = new AndroidMobile("P30 Pro", "blue", "HUAWEI");
+
+//        System.out.println(mobile.toString());
+        Person person = new Person("AKin");
+        person.setMobile(iphoneMobile);
+        person.getMobile().makeACall("Message cannot be sent");
+        person.setMobile(androidMobile);
+        person.getMobile().makeACall("Message cannot be sent");
+
+        IPhoneRobot iPhoneRobot = new IPhoneRobot();
+        iPhoneRobot.setiPhone(iphoneMobile);
+        iPhoneRobot.getiPhone().makeACall("iphoneRobot's message cannot be sent");
+
+//        System.out.println(new App().getGreeting());
     }
 }
